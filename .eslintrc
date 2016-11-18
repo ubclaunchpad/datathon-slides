@@ -8,6 +8,7 @@
   "quotes": 0
   "indent": 0
   "react/jsx-indent-props": 0
+  "no-consol": 0
 
 "env":
   "browser": true,

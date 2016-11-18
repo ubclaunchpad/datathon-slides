@@ -1,5 +1,9 @@
 import React, {Component} from "react";
 import {Heading} from 'spectacle';
+import request from 'superagent';
+
+// const API_URL = 'https://ubclaunchpad.mybluemix.net/classifyrequest';
+const API_URL = 'http://localhost:8000/classifyrequest';
 
 export default class RequestClassifier extends Component {
 	constructor() {
@@ -41,8 +45,14 @@ export default class RequestClassifier extends Component {
 	}
 
 	classify() {
-		this.setState({
-			classification: ["WATER AND ICE", "GARBAGE", "FIRE", "POLICE"][Math.round(Math.random() * 3)]
-		});
+		request
+			.post(API_URL)
+			.set('Content-Type', 'application/json')
+			.send({body: this.state.fieldText})
+			.end((err, res) => {
+				this.setState({
+					classification: res.text
+				});
+			});
 	}
 }
