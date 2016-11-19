@@ -31,6 +31,7 @@ import createTheme from "spectacle/lib/themes/default";
 // Import custom component
 import Interactive from "../assets/interactive";
 import RequestClassifier from '../assets/request-classifier';
+import UserForm from '../assets/user-form';
 
 // Require CSS
 require("normalize.css");
@@ -57,6 +58,9 @@ export default class Presentation extends React.Component {
         <Deck transition={["zoom", "slide"]} transitionDuration={500}>
           <Slide bgColor="primary">
             <RequestClassifier />
+          </Slide>
+          <Slide bgColor="primary">
+            <UserForm />
           </Slide>
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="black">
