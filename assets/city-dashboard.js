@@ -133,7 +133,7 @@ const REQS = [{
 		"service_request_id": "949859",
 		"status": "OPEN"
 }];
-
+// Need less negative tweets that are not @CityofSurrey
 const TWEETS = [
 
     {
