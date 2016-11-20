@@ -7,6 +7,9 @@ const AGENCIES = ['ANIMAL CONTROL', 'BUILDING INQUIRIES', 'GARDEN BED', 'GRAFFIT
 	'TRAFFIC CALMING', 'TRAFFIC SIGNALS OR STREET LIGHTS', 'TRANSPORTATION PLANNING INQUIRIES',
 	'TREES', 'UNSIGHTLY PROPERTY', 'WASTE COLLECTION'];
 
+const LITTER_KEYWORDS = ['trash', 'garbage', 'refuse', 'pickup', 'litter', 'dump',
+	'crap', 'can', 'bin'];
+
 const styles = {
 	agency: {
 		margin: 12
@@ -92,13 +95,11 @@ export default class UserForm extends Component {
 		}
 
 		const tokens = fieldText.split(' ');
-		console.log(tokens);
 		for (let i = 0; i < tokens.length; i++) {
-			const uppercaseToken = tokens[i].toUpperCase();
-			for (let j = 0; j < AGENCIES.length; j++) {
-				if (AGENCIES[j].includes(uppercaseToken)) {
-					console.log(tokens, i, AGENCIES[j]);
-					this.setState({suggestedAgency: AGENCIES[j]});
+			const t = tokens[i].toLowerCase();
+			for (let j = 0; j < LITTER_KEYWORDS.length; j++) {
+				if (LITTER_KEYWORDS[j].includes(t)) {
+					this.setState({suggestedAgency: 'LITTER OR DUMPING'});
 					return;
 				}
 			}

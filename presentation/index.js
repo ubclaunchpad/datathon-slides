@@ -32,6 +32,7 @@ import createTheme from "spectacle/lib/themes/default";
 import Interactive from "../assets/interactive";
 import RequestClassifier from '../assets/request-classifier';
 import UserForm from '../assets/user-form';
+import CityDashboard from '../assets/city-dashboard';
 
 // Require CSS
 require("normalize.css");
@@ -61,6 +62,9 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide bgColor="primary">
             <UserForm />
+          </Slide>
+          <Slide bgColor="primary">
+            <CityDashboard />
           </Slide>
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="black">
