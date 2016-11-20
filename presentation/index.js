@@ -57,15 +57,187 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+
+          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
+            <Heading fit size={1} textColor="secondary">
+              UBC Launch Pad Team 1
+            </Heading>
+            <Heading fit size={2} textColor="secondary">
+              IEEE/TELUS Smart Cities Datathon
+            </Heading>
+            <Markdown>
+              {`
+Eric Stroczynski, Jordan Schalm, Mohamed Ali, James Park
+              `}
+            </Markdown>
+          </Slide>
+
+          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
+            <Heading fit size={4} textColor="primary">
+              Motivations and Data
+            </Heading>
+
+            <Markdown>
+              {`
+* As developers, we want to help end users
+* How can we improve our products?
+  * Through **data**!
+* Requests data == City of Surrey "product" data
+* Iterative _feedback/improvement_ cycles build robust systems
+              `}
+            </Markdown>
+          </Slide>
+
+          <Slide transition={["spin"]} bgColor="tertiary">
+            <Heading fit size={4} textColor="primary">
+              The Requests System
+            </Heading>
+
+            <Markdown>
+              {`
+* Citizens of Surrey, the user, make categorized requests
+* 60,000+ requests made in 2016, 57,000 (>91%) closed
+  * 70,000 requests per year from 2013-2015
+* Many requests, active system -> inefficiencies??
+  * Time and resource bottlenecks
+  * Low end-user transparency
+              `}
+            </Markdown>
+          </Slide>
+
+          <Slide transition={["spin"]} bgColor="tertiary">
+            <Heading fit size={4} textColor="primary">
+              Pertinent Questions
+            </Heading>
+
+            <Markdown>
+              {`
+1. What is the **average close time** for a request
+2. Which agencies get the most **request traffic**
+  * Which agencies take the longest to close issues
+3. Are there **duplicates** and null values in the data
+  * How frequently are they generated
+  * Are they important to redirect appropriately
+4. How do users know their requests have been heard
+              `}
+            </Markdown>
+          </Slide>
+
+          <Slide transition={["spin"]} bgColor="tertiary">
+            <Heading fit size={4} textColor="primary">
+              Some Answers
+            </Heading>
+
+            <Markdown>
+              {`
+1. Average close time: **9 days**
+  * All but one agency within 1 std dev of average
+2. 70% of all issues: **garbage, roads/traffic related, trees**
+  * Reflects distribution over all years since 2010
+3. **700 "OTHER" requests** in 2016 alone
+4. Some requests had up to **52 duplicates**
+  * Semantically and geospatially grouped
+              `}
+            </Markdown>
+          </Slide>
+
+          <Slide transition={["spin"]} bgColor="tertiary">
+            <Heading fit size={4} textColor="primary">
+              Hypotheses
+            </Heading>
+
+            <Markdown>
+              {`
+Problems:
+1. Inefficiencies caused by duplicates and OTHER's
+2. Transparency and community engagement
+
+Solutions:
+1. **Target duplicates** for consolidation
+2. Cross-validate requests with **Twitter data**
+3. **Category suggestion algorithm** for requests, OTHER's
+4. Update **expected response** times on requests in real time
+              `}
+            </Markdown>
+          </Slide>
+
+          <Slide transition={["spin"]} bgColor="primary">
+            <Heading fit size={4} textColor="tertiary">
+              Consolidate Duplicates and Tweets
+            </Heading>
+              <CityDashboard />
+          </Slide>
+
           <Slide bgColor="primary">
+            <Heading fit size={4} textColor="tertiary">
+              Classification
+            </Heading>
             <RequestClassifier />
           </Slide>
+
           <Slide bgColor="primary">
+            <Heading fit size={4} textColor="tertiary">
+              Suggestions
+            </Heading>
             <UserForm />
           </Slide>
+
           <Slide bgColor="primary">
-            <CityDashboard />
+            <Heading fit size={4} textColor="tertiary">
+              Periodically Updated Expected Time
+            </Heading>
+            <Markdown>
+            {`
+* Calculate **exponential moving average** over 5 day periods
+* Weighs fresh data more heavily
+* Creates transparency for user
+  * Shows **active involvement** with requests by the City
+            `}
+            </Markdown>
           </Slide>
+
+          <Slide bgColor="primary">
+            <Heading fit size={4} textColor="tertiary">
+              Material Savings
+            </Heading>
+            <Markdown>
+            {`
+* OTHER re-routing: > **$20,000/year** (clerk at minimum wage)
+* Consolidation: > **1 hour/day** (manual consolidation)
+* Community engagement: **priceless**.
+            `}
+            </Markdown>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading fit size={4} textColor="tertiary">
+              Technologies
+            </Heading>
+            <Markdown>
+            {`
+* Web hosting: BlueMix
+* Analysis: TextBlob, Scikit Learn (Python)
+* Slides: ReactJS (JavaScript)
+            `}
+            </Markdown>
+          </Slide>
+
+          <Slide bgColor="primary">
+            <Heading fit size={4} textColor="tertiary">
+              Acknowledgements
+            </Heading>
+            <Markdown>
+            {`
+BlueMix Team
+Alan Devine
+Telus
+IEEE
+
+_**Thank you!**_
+            `}
+            </Markdown>
+          </Slide>
+
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="black">
               Spectacle
