@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import {Heading} from 'spectacle';
 import request from 'superagent';
 
-// const API_URL = 'https://ubclaunchpad.mybluemix.net/classifyrequest';
-const API_URL = 'http://localhost:8000/classifyrequest';
+const API_URL = 'https://ubclaunchpad.mybluemix.net/classifyrequest';
+// const API_URL = 'http://localhost:8000/classifyrequest';
 
 export default class RequestClassifier extends Component {
 	constructor() {

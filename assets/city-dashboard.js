@@ -1,6 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import {Heading} from 'spectacle';
-import request from 'superagent';
 
 const styles = {
 	icon: {
@@ -8,7 +6,8 @@ const styles = {
 	},
 	container: {
 		backgroundColor: 'white',
-		display: 'flex'
+		display: 'flex',
+		marginTop: 16
 	},
 	tweets: {
 		width: '40%',
@@ -136,17 +135,19 @@ const REQS = [{
 // Need less negative tweets that are not @CityofSurrey
 const TWEETS = [
 
+	{
+			"user": "@Burger",
+			"body": "It's been over two weeks since you said you'd send an OPS crew to clean up the trash and yet nothing has been done",
+			"url": "https://twitter.com/CarsonBurgin/status/574387087329251328"
+
+	},
+
     {
         "user": "Andrew",
         "body": "@CityofSurrey  stop sign at 18 A and 146 is backwards.",
         "url": "https://twitter.com/HudsonHomeTeam/status/799305856441401344"
 
-    }, {
-        "user": "James Cobalt",
-        "body": "Dear Surreyites,, my @CityofSurrey neighborhood is not a **** dump. Please stop treating it like one Thank you",
-        "url": "https://twitter.com/CityofSurrey/status/798575346295545857"
-    },
-
+},
     {
         "user": "Daryl Dela Cruz",
         "body": "I find it amusing how the @CityofSurrey installed brand new L-turn signals on EVERY movement *EXCEPT* the 1 used by #301 bus @ Scott & 84th ",

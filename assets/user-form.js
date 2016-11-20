@@ -47,13 +47,14 @@ export default class UserForm extends Component {
 
 		this.handleChangeFieldText = this.handleChangeFieldText.bind(this);
 		this.handleChangeSelection = this.handleChangeSelection.bind(this);
+		this.handleChangeSelectionToSuggestion = this.handleChangeSelectionToSuggestion.bind(this);
 		this.suggestAgency = this.suggestAgency.bind(this);
 	}
 
 	render() {
 		const {fieldText, selectedAgency, suggestedAgency} = this.state;
 		return (
-			<div>
+			<div style={{marginTop: 16}}>
 				<div style={styles.inputContainer}>
 				<input
 					type="text"
@@ -69,9 +70,12 @@ export default class UserForm extends Component {
 				</div>
 				{
 					suggestedAgency.length ?
-					<div style={styles.suggestedAgency}>
+					<a
+						style={styles.suggestedAgency}
+						onClick={() => this.handleChangeSelectionToSuggestion('LITTER OR DUMPING')}
+					>
 						<h4>{suggestedAgency}</h4>
-					</div> :
+					</a> :
 					null
 				}
 			</div>
@@ -85,6 +89,10 @@ export default class UserForm extends Component {
 
 	handleChangeSelection(e) {
 		this.setState({selectedAgency: e.target.value});
+	}
+
+	handleChangeSelectionToSuggestion(agency) {
+		this.setState({selectedAgency: agency});
 	}
 
 	suggestAgency() {
