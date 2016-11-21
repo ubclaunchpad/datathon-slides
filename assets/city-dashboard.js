@@ -27,7 +27,7 @@ const styles = {
 			padding: 8,
 			textAlign: 'left',
 			borderBottomWidth: 1,
-			borderBottomStyle: 'solid',
+			borderBottomStyle: 'solid'
 		},
 		body: {
 			fontSize: 16
@@ -164,7 +164,8 @@ const TWEETS = [
 
 const images = {
 	pin: require('./pin.png'),
-	mail: require('./envelope.png')
+	mail: require('./envelope.png'),
+	twitter: require('./twitter.png')
 };
 
 const Tweet = ({body, user, url}) => (
@@ -221,12 +222,18 @@ export default class CityDashboard extends Component {
 
 	render() {
 		return (
-			<div style={styles.container}>
-				<div style={styles.tweets}>
-					{this.state.tweets.map((tweet, i) => <Tweet key={i} {...tweet} />)}
-				</div>
-				<div style={styles.requests}>
-					{this.state.requests.map((req, i) => <Request key={i} {...req} />)}
+			<div>
+				<h1 style={{margin: 0, fontSize: 48}}>City Dashboard</h1>
+				<div style={styles.container}>
+					<div style={styles.tweets}>
+						<div style={{}}>
+							<img src={images.twitter.replace("/", "")} style={{width: 48, height: 48}} />
+						</div>
+						{this.state.tweets.map((tweet, i) => <Tweet key={i} {...tweet} />)}
+					</div>
+					<div style={styles.requests}>
+						{this.state.requests.map((req, i) => <Request key={i} {...req} />)}
+					</div>
 				</div>
 			</div>
 		);

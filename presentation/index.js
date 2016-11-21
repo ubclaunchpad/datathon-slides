@@ -29,7 +29,6 @@ import preloader from "spectacle/lib/utils/preloader";
 import createTheme from "spectacle/lib/themes/default";
 
 // Import custom component
-import Interactive from "../assets/interactive";
 import RequestClassifier from '../assets/request-classifier';
 import UserForm from '../assets/user-form';
 import CityDashboard from '../assets/city-dashboard';
@@ -143,13 +142,6 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["spin"]} bgColor="primary">
-            <Heading fit size={4} textColor="tertiary">
-              Consolidate Duplicates and Tweets
-            </Heading>
-              <CityDashboard />
-          </Slide>
-
           <Slide bgColor="primary">
             <Heading fit size={4} textColor="tertiary">
               Classification
@@ -162,6 +154,13 @@ export default class Presentation extends React.Component {
               Suggestions
             </Heading>
             <UserForm />
+          </Slide>
+
+          <Slide transition={["spin"]} bgColor="primary">
+            <Heading fit size={4} textColor="tertiary">
+              Consolidate Duplicates and Tweets
+            </Heading>
+              <CityDashboard />
           </Slide>
 
           <Slide bgColor="primary">
