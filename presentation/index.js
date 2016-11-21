@@ -133,7 +133,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["spin"]} bgColor="tertiary">
-            <Heading fit size={2} textColor="primary">Solutions</Heading>
+            <Heading fit size={1} textColor="primary">Solutions</Heading>
+            <Heading fit size={2}><u>Research Goal:</u> Improve efficacy of City of Surrey Request system</Heading>
             <List>
               <ListItem>Target duplicates for consolidation</ListItem>
               <ListItem>Cross validate requests with Twitter data</ListItem>
@@ -165,7 +166,7 @@ export default class Presentation extends React.Component {
 
           <Slide bgColor="primary">
             <Heading fit size={4} textColor="tertiary">
-              Periodically Updated Expected Time
+              Expected Time Updates
             </Heading>
             <List>
               <ListItem>Calculate moving average over 5 day periods</ListItem>
